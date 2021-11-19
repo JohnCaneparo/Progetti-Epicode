@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>GodFather's Pizza Menu</title>
+</head>
+<body>
+	<h1>GodFather's Pizza Menu</h1>
+	<h2>Menu Pizze</h2>
+	<ul>
+		<li th:each="item: ${menu.menuPizza}">
+			<div
+				th:text="${item.name} + ' Prezzo: ' +${item.price}+ '&#8364;' + ' ' + ${item.calories} + ' Calorie'"></div>
+		</li>
+	</ul>
+	<hr>
+	<h2>Pizza Family Size</h2>
+	<ul>
+		<li>Pizza Family Size + 4.15&#8364; + 1.95 calories</li>
+	</ul>
+	
+	<hr>
+	<h2>Menu Topping</h2>
+	<ul>
+		<li th:each="item: ${menu.menuTopping}">
+			<div
+				th:text="${item.name} + ' Prezzo: ' +${item.price}+ '&#8364;' + ' ' + ${item.calories} + ' Calorie'"></div>
+		</li>
+	</ul>
+	<hr>
+	<h2>Menu Drink</h2>
+	<ul>
+		<li th:each="item: ${menu.menuDrink}">
+		<div th:text="${item.name} + ' Prezzo: ' +${item.price}+ '&#8364;' + ' ' + ${item.calories} + ' Calorie'"></div>
+		</li>
+	</ul>
+	<hr>
+	<h2>Menu Franchise</h2>
+	<ul>
+		<li th:each="item: ${menu.menuFranchise}">		
+		<div th:text="${item.name} + ' Prezzo: ' +${item.price}+ '&#8364;'"></div>
+		</li>
+	</ul>
+	<hr>
+</body>
+</html>

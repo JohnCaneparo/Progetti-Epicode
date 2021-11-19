@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista Ordini</title>
+</head>
+<body>
+	<h1>Lista Ordini</h1>
+		<ul>
+		<li th:each="item: ${listaordini}">
+			<a th:href=" @{/order/{id}(id=${item.numeroOrdine})}" th:text="${item.numeroOrdine} + ' Tavolo = ' + ${item.tavolo.numero} + ' Numero Coperti: ' + ${item.numeroCoperti}"></a>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ordine</title>
+</head>
+<body>
+<h3 th:text = "'Ordine ' + ${ordine.numeroOrdine}"></h3>
+<ul th:each = "item:${ordine.ordinato}">
+	<li th:text = "${item.key.name} + ' x ' + ${item.value}"></li>
+</ul>
+<div th:text = "'Totale = ' + ${ordine.totale} + '&#8364;'"></div>
+</body>
+</html>

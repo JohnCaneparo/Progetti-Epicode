@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gestione Prenotazioni</title>
+</head>
+<body>
+
+	<div align="left">
+		<h2>Gestione Prenotazione</h2>
+		<div align="right">
+			<form method="get" action="/controller/regole">
+				<p>
+					<b>Lingua:</b>
+				</p>
+				Italiano <input type="radio" name="language" value="it"
+					checked="checked"> <br> English <input type="radio"
+					name="language" value="en"><br> <input type="submit"
+					value="Choose!">
+			</form>
+		</div>
+		<form method="get" action="/prenotazionecontroller/creaprenotazione">
+			User Id: <input type="number" placeholder="Inserire ID Utente"
+				name="userId" value="userId"> Postazione Id: <input
+				type="number" placeholder="Inserire ID Postazione"
+				name="postazioneId" value="postazioneId"> <br>
+			<br> Inserire DATA: <br> <input type="date"
+				name="dataPrenotata" value="29-10-2021" min="01-01-2018"
+				max="12-01-2030" />
+			<input type="submit" value="Invia!">
+		</form>
+	<form action="#" th:action="@{/api/login}"  th:object="${loginRequest}" method="post">
+        <p>Login</p>
+        <input type="text" th:field="*{username}" placeholder="Inserisci username"/> 
+        <input type="password" th:field="*{password}" placeholder="Inserisci password"/> 
+        <input type="submit"/>
+    </form>
+	</div>
+</body>
+</html>
