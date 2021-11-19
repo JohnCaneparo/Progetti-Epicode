@@ -1,0 +1,21 @@
+--DDL per creazione della tabella prodotto
+CREATE TABLE IF NOT EXISTS negozio.prodotto
+(
+    "codiceProdotto" integer NOT NULL,
+    nome character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    descrizione character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    marca character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    fornitore integer NOT NULL,
+    prezzo numeric(6,2) NOT NULL
+	CONSTRAINT prodotto_pk PRIMARY KEY ("codiceProdotto")
+)
+
+--DDL per creazoine della tabella fornitore
+CREATE TABLE IF NOT EXISTS negozio.fornitore
+(
+    "codiceFornitore" integer NOT NULL,
+    nome character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    indirizzo character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    citta character varying(50) COLLATE pg_catalog."default" NOT NULL
+	CONSTRAINT fornitore_pk PRIMARY KEY ("codiceFornitore")
+)
